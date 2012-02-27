@@ -11,8 +11,8 @@
 	
 	{% for idea in space.ideas %}
 		ideas[{{forloop.index0}}] = new Object;
-		ideas[{{forloop.index0}}].title = {{idea.title}};
-		ideas[{{forloop.index0}}].custom1 = {{idea.custom1}};
+		ideas[{{forloop.index0}}].title = '{{idea.title}}';
+		ideas[{{forloop.index0}}].custom1 = '{{idea.custom1}}';
 	{% endfor %}
 	
 	
