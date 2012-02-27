@@ -107,6 +107,13 @@
 				color: #333;
 			}
 			
+			#header-buttons {
+				position: absolute;
+				top: 5px;
+				right: 0;
+				margin-top: 20px;
+			}
+			
 			.red {
 				color: #b33732;
 				text-shadow: 0 1px 0 #ccc,
@@ -164,20 +171,43 @@
 				color: #0099d5;
 			}
 			
+			.font-social-logos {
+				font-family: 'SocialLogosRegular', sans-serif;
+			}
+			
 		</style>
 	</head>	
 	<body>
 		<header class="main">
 			<div class="container">
 				<h1 class="red title">{{space.title}}</h1>
-				<h2 class="social">
-					<a href="/auth/twitter">
-						<span class="twitter">M</span>
-					</a>
-					<a href="/auth/facebook">
-						<span class="facebook">C</span>
-					</a>
-				</h2>
+				
+				{% if current_user %}
+					<div id="header-buttons">
+						{% if current_user.provider == 'twitter' %}
+							<div class="btn twitter">
+			    				<a href="/auth/signout">
+			    					<span class="font-social-logos">M</span> Signout
+			    				</a>
+			    			</div>
+						{% else %}
+							<div class="btn facebook">
+								<a href="/auth/signout">
+			    					<span class="font-social-logos">C</span> Signout
+			    				</a>
+			    			</div>
+		    			{% endif %}
+	    			</div>
+				{% else %}
+					<h2 class="social">
+						<a href="/auth/twitter">
+							<span class="twitter">M</span>
+						</a>
+						<a href="/auth/facebook">
+							<span class="facebook">C</span>
+						</a>
+					</h2>
+				{% endif %}
 			</div>
 		</header>
 		<div class="container" id="main">
