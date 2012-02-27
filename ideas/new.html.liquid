@@ -13,8 +13,37 @@
 	{% for image in params.images %}
 		<li class="span3">
 			<label class="thumbnail" for="radio-{{forloop.index0}}">
-				<img src="{{image}}" height="200px" />
+				<img src="{{image}}" class=""/>
 			</label>
 		</li>
+	{% endfor %}
+</ul>
+
+<ul class="unstyled mainlist">
+	{% for image in params.images %}
+		{% if forloop.index0 < 3 %}
+			<img src="{{image}}"/>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="unstyled mainlist">
+	{% for image in params.images %}
+		{% if forloop.index0 >= 3 && forloop.index0 < 6 %}
+			<img src="{{image}}"/>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="unstyled mainlist">
+	{% for image in params.images %}
+		{% if forloop.index0 >= 6 && forloop.index0 < 9 %}
+			<img src="{{image}}"/>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="unstyled mainlist last">
+	{% for image in params.images %}
+		{% if forloop.index0 >= 9 %}
+			<img src="{{image}}"/>
+		{% endif %}
 	{% endfor %}
 </ul>
