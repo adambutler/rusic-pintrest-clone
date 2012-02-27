@@ -35,10 +35,8 @@
   var iframe = document.createElement('iframe');
 
   // Pass the current url across to the space.
-  iframe.setAttribute('src', iframeSrc + '?images[]=' + pageImages.slice(0, 10).join('&images[]='));
+  iframe.setAttribute('src', iframeSrc + '?images[]=' + pageImages.slice(0, 12).join('&images[]='));
   
-  console.log(iframeSrc + '?images[]=' + pageImages.slice(0, 10).join('&images[]='));
-
   iframe.setAttribute('id', 'rusic-modal');
   iframe.setAttribute('style', iframeStyle);
 
