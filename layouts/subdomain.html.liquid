@@ -1,3 +1,9 @@
+{% if env == "development" %}
+	{% assign asset_url="http://127.0.0.1/public" %}
+{% else %}
+	{% assign asset_url="http://adambutler.github.com/rusic-pintrest-clone/public" %}
+{% endif %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,9 +16,9 @@
 		</title>
 			
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset_url }}/styles/css/style.css"> -->
-		<link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../public/styles/fonts/webfontkit-20120227-063853/stylesheet.css">
-		<link rel="stylesheet" type="text/css" href="../public/styles/fonts/webfontkit-20120227-075113/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="{{assets_url}}/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{{assets_url}}/styles/fonts/webfontkit-20120227-063853/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="{{assets_url}}/styles/fonts/webfontkit-20120227-075113/stylesheet.css">
 		
 		<!-- Will move css later -->
 		
