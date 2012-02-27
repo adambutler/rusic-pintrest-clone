@@ -8,6 +8,7 @@
  * For turning this script into a bookmarklet, you should probably take
  * a look at https://gist.github.com/1856012.
  */
+ 
 (function() {
 
   // This is the page that will display inside the iframe.
@@ -35,6 +36,8 @@
 
   // Pass the current url across to the space.
   iframe.setAttribute('src', iframeSrc + '?images[]=' + pageImages.slice(0, 10).join('&images[]='));
+  
+  console.log(iframeSrc + '?images[]=' + pageImages.slice(0, 10).join('&images[]='));
 
   iframe.setAttribute('id', 'rusic-modal');
   iframe.setAttribute('style', iframeStyle);
