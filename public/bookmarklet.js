@@ -11,7 +11,7 @@
 (function() {
 
   // This is the page that will display inside the iframe.
-  var iframeSrc = 'http://hectic.rusic.com/test-space/ideas/new';
+  var iframeSrc = 'http://360k.rusic.com/pintrest-clone/ideas/new';
 
   // Styles for the iframe.
   var iframeStyle = 'position: fixed; z-index: 999999; width: 800px; height: 600px; right: 0; top: 0; border: none; overflow: hidden; background-color: white;';
