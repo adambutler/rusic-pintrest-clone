@@ -57,3 +57,12 @@
 		{% endif %}
 	{% endfor %}
 </ul>
+
+<script type="text/javascript">
+	$('label').click(function(){
+		$('.main-list-item').each(function(){
+			$(this).removeClass('selected');
+		})
+		$(this).nearest('.main-list-item').addClass('selected');
+	})
+</script>
