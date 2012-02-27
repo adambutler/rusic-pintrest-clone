@@ -22,7 +22,9 @@
 <ul class="unstyled mainlist">
 	{% for image in params.images %}
 		{% if forloop.index0 < 3 %}
-			<img src="{{image}}"/>
+			<li class="main-list-item">
+				<img src="{{image}}"/>
+			</ul>
 		{% endif %}
 	{% endfor %}
 </ul>
@@ -30,7 +32,9 @@
 	{% for image in params.images %}
 		{% if forloop.index0 >= 3 %}
 			{% if forloop.index0 < 6 %}
-				<img src="{{image}}"/>
+				<li class="main-list-item">
+					<img src="{{image}}"/>
+				</ul>
 			{% endif %}
 		{% endif %}
 	{% endfor %}
@@ -39,7 +43,9 @@
 	{% for image in params.images %}
 		{% if forloop.index0 >= 6 %}
 			{% if forloop.index0 < 9 %}
-				<img src="{{image}}"/>
+				<li class="main-list-item">
+					<img src="{{image}}"/>
+				</ul>
 			{% endif %}
 		{% endif %}
 	{% endfor %}
@@ -47,7 +53,9 @@
 <ul class="unstyled mainlist last">
 	{% for image in params.images %}
 		{% if forloop.index0 >= 9 %}
-			<img src="{{image}}"/>
+			<li class="main-list-item">
+				<img src="{{image}}"/>
+			</ul>
 		{% endif %}
 	{% endfor %}
 </ul>
