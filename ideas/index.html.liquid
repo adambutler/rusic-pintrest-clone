@@ -1,6 +1,8 @@
+{% paginate space.ideas by 2 %}
+
 <!-- Oh noes, static content... i'll fix this later -->
 <ul class="unstyled">
-	{% for idea in space.ideas %}
+	{% for idea in pagination.collection %}
 		<li class="main-list-item">
 			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
 			<h4>{{idea.title}}</h4>
@@ -8,56 +10,25 @@
 	{% endfor %}
 </ul>
 <ul class="unstyled">
-	<li>
-		<img src="http://placehold.it/800x740" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x240" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x600" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x350" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
+	{% for idea in pagination.collection %}
+		<li class="main-list-item">
+			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+			<h4>{{idea.title}}</h4>
+		</li>
+	{% endfor %}
 </ul>
 <ul class="unstyled">
-	<li>
-		<img src="http://placehold.it/800x590" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x980" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x340" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x670" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-</ul>
+	{% for idea in pagination.collection %}
+		<li class="main-list-item">
+			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+			<h4>{{idea.title}}</h4>
+		</li>
+	{% endfor %}</ul>
 <ul class="unstyled last">
-	<li>
-		<img src="http://placehold.it/800x880" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x340" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x380" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x540" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
+	{% for idea in pagination.collection %}
+		<li class="main-list-item">
+			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+			<h4>{{idea.title}}</h4>
+		</li>
+	{% endfor %}
 </ul>
