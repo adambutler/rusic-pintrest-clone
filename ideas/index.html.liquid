@@ -1,21 +1,11 @@
 <!-- Oh noes, static content... i'll fix this later -->
 <ul class="unstyled">
-	<li>
-		<img src="http://placehold.it/800x540" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x340" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x1540" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
-	<li>
-		<img src="http://placehold.it/800x940" alt="TITLE HERE"/>
-		<h4>The Title</h4>
-	</li>
+	{% for idea in space.ideas %}
+		<li class="main-list-item">
+			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+			<h4>{{idea.title}}</h4>
+		</li>
+	{% endfor %}
 </ul>
 <ul class="unstyled">
 	<li>
