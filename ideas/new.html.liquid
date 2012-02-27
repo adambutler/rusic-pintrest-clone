@@ -28,15 +28,19 @@
 </ul>
 <ul class="unstyled mainlist">
 	{% for image in params.images %}
-		{% if forloop.index0 >= 3 && forloop.index0 < 6 %}
-			<img src="{{image}}"/>
+		{% if forloop.index0 >= 3 %}
+			{% if forloop.index0 < 6 %}
+				<img src="{{image}}"/>
+			{% endif %}
 		{% endif %}
 	{% endfor %}
 </ul>
 <ul class="unstyled mainlist">
 	{% for image in params.images %}
-		{% if forloop.index0 >= 6 && forloop.index0 < 9 %}
-			<img src="{{image}}"/>
+		{% if forloop.index0 >= 6 %}
+			{% if forloop.index0 < 9 %}
+				<img src="{{image}}"/>
+			{% endif %}
 		{% endif %}
 	{% endfor %}
 </ul>
