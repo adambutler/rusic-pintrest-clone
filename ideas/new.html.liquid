@@ -1,9 +1,11 @@
 <form method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipart/form-data">
 	<input name="idea[title]" type="text" placeholder="Title">
 	<input name="idea[content]" placeholder="Description"/>
-	{% for image in params.images %}
-		<input name="idea[custom1]" type="radio" value="{{image}}" id="radio-{{forloop.index0}}"/>
-	{% endfor %}
+	<div class="hide">
+		{% for image in params.images %}
+			<input name="idea[custom1]" type="radio" value="{{image}}" id="radio-{{forloop.index0}}"/>
+		{% endfor %}
+	</div>
 	<input type="submit">
 </form>
 
