@@ -4,7 +4,17 @@
 	<input name="idea[custom1]" type="text" placeholder="image url">
 	<input type="submit">
 </form>
+
 {% for image in params.images %}
-	<input name="idea[custom1]" type="radio" value="{{ image }}" />
-	<img src="{{ image }}" /><br />
+	<input name="idea[custom1]" type="radio" value="{{image}}" id="radio-{{forloop.index0}}"/>
 {% endfor %}
+
+<ul class="thumbnails">
+	{% for image in params.images %}
+		<li class="span3">
+			<label class="thumbnail" for="radio-{{forloop.index0}}">
+				<img src="{{image}}" />
+			</label>
+		</li>
+	{% endfor %}
+</ul>

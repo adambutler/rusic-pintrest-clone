@@ -1,0 +1,1 @@
+javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();
