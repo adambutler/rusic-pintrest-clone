@@ -1,34 +1,30 @@
-{% paginate space.ideas by 2 %}
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist last"></ul>
 
-<!-- Oh noes, static content... i'll fix this later -->
-<ul class="unstyled">
-	{% for idea in pagination.collection %}
-		<li class="main-list-item">
-			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
-			<h4>{{idea.title}}</h4>
-		</li>
+
+<script type="text/javascript">
+	
+	var i = 0;
+	
+	{% for idea in space.ideas %}
+		$('.mainlist eq:('i')').append(i);
+		
+		if(i<4){
+			i++;
+		}else{
+			i=0;
+		}
 	{% endfor %}
-</ul>
-<ul class="unstyled">
-	{% for idea in pagination.collection %}
-		<li class="main-list-item">
-			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
-			<h4>{{idea.title}}</h4>
-		</li>
-	{% endfor %}
-</ul>
-<ul class="unstyled">
-	{% for idea in pagination.collection %}
-		<li class="main-list-item">
-			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
-			<h4>{{idea.title}}</h4>
-		</li>
-	{% endfor %}</ul>
-<ul class="unstyled last">
-	{% for idea in pagination.collection %}
-		<li class="main-list-item">
-			<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
-			<h4>{{idea.title}}</h4>
-		</li>
-	{% endfor %}
-</ul>
+	
+	
+</script>
+<!--
+
+<li class="main-list-item">
+	<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+	<h4>{{idea.title}}</h4>
+</li>
+
+-->
