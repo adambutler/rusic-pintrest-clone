@@ -121,17 +121,17 @@
 			
 			/* List */
 			
-			div#main ul {
+			.mainlist {
 				width: 220px;
 				margin-right: 20px;
 				float: left;
 			}
 			
-			div#main ul.last {
+			.mainlist.last {
 				margin-right: 0;
 			}
 			
-			div#main li {
+			.mainlist li {
 				width: 200px;
 				padding: 10px;
 				background-color: #fff;
@@ -144,7 +144,7 @@
 				box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 			}
 			
-			div#main li:hover {
+			.mainlist li:hover {
 				border-color: #b33732;
 			}
 			
@@ -172,7 +172,7 @@
 				</h2>
 			</div>
 		</header>
-		<div class="container" id="main">
+		<div class="container">
 			{{yield}}
 		</div>
 		<footer class="main">
