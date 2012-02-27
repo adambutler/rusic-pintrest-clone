@@ -6,19 +6,25 @@
 
 <script type="text/javascript">
 	
-	var i = 0;
+	var ideas = new Array();
+	var col = 0;
 	
 	{% for idea in space.ideas %}
-		$('.mainlist eq:('i')').append(i);
-		
-		if(i<4){
-			i++;
-		}else{
-			i=0;
-		}
+		ideas[{{forloop.index0}}] = new Object;
+		ideas[{{forloop.index0}}].title = {{idea.title}};
+		ideas[{{forloop.index0}}].custom1 = {{idea.custom1}};
 	{% endfor %}
 	
 	
+	for(var i = 0; i<ideas.length; i++){
+		$('.mainlist eq:('col')').append(ideas[i].title);
+		
+		if(col<4){
+			col++;
+		}else{
+			col=0;
+		}
+	}
 </script>
 <!--
 
