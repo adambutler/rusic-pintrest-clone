@@ -15,7 +15,7 @@
   var iframeSrc = 'http://360k.rusic.com/pintrest-clone/ideas/new';
 
   // Styles for the iframe.
-  var iframeStyle = 'position: fixed; z-index: 999999; width: 800px; height: 600px; right: 0; top: 0; border: 5px solid #b33732; background-color: white;';
+  var iframeStyle = 'position: fixed; z-index: 999999; width: 800px; height: 600px; right: 20px; top: 20px; border: 5px solid #b33732; background-color: white;';
 
   var images = [].slice.call(document.querySelectorAll('img'));
 
