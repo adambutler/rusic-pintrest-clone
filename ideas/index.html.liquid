@@ -31,11 +31,12 @@
 		ideas[{{forloop.index0}}] = new Object;
 		ideas[{{forloop.index0}}].title = '{{idea.title | replace: "'","&#39;"}}';
 		ideas[{{forloop.index0}}].custom1 = '{{idea.custom1}}';
+		ideas[{{forloop.index0}}].permalink = '{{idea.permalink}}';
 	{% endfor %}
 	
 	
 	for(var i = 0; i<ideas.length; i++){
-		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><a href="{{idea.permalink}}"><h4>'+ideas[i].title+'</h4></a></li>');
+		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><a href="'+ideas[i].permalink+'"><h4>'+ideas[i].title+'</h4></a></li>');
 		
 		if(col<4){
 			col++;
