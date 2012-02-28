@@ -9,7 +9,7 @@
 							<img src="{{comment.user.image_url}}" alt="avatar" class="avatar"/>
 							<div class="comment-text">
 								<div class="comment-content">{{comment.body | markdown}}</div>
-								<div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a>/div>
+								<div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a></div>
 							</div>
 						</li>
 					{% endfor %}
