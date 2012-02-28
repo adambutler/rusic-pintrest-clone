@@ -224,10 +224,16 @@
 			{{yield}}
 		</div>
 		<footer class="main">
-			<h3>I have no need for a footer #fool</h3>
+			<div class="container"
+				<h3>I have no need for a footer #fool</h3>
+			</div>
 		</footer>
 		<script type="text/javascript">
-			$('#bookmarklet-link').tooltip({placement:'bottom'});
+			$('#bookmarklet-link').tooltip({placement:'bottom'}).click(function(e){
+				e.preventDefault();		
+			}).mouseover(function(e){
+				e.preventDefault();		
+			});
 		</script>		
 	</body>
 </html>
