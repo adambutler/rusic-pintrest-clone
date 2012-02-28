@@ -35,7 +35,7 @@
 	
 	
 	for(var i = 0; i<ideas.length; i++){
-		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><h4>'+ideas[i].title+'</h4></li>');
+		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><a href="{{idea.permalink}}"><h4>'+ideas[i].title+'</h4></a></li>');
 		
 		if(col<4){
 			col++;
