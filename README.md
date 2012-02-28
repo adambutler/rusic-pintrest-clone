@@ -1,4 +1,4 @@
-Rusic recipes theme
+Pintrest theme
 
 See http://hq.rusic.com/theming for docs
 

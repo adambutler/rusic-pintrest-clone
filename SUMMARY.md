@@ -1,5 +1,7 @@
-Beautiful masonry powered recipes theme
+Pintrest Theme
 
-* Add your own recipes
-* Share recipes with others over twitter & facebook
-* Like & comment on recipes
+Archive and share images you like
+
+* Bookmark Images
+* Share images with others over twitter & facebook
+* Like & comment on images
