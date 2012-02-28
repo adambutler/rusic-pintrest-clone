@@ -1,3 +1,10 @@
+<style type="text/css">
+	.container {
+		padding: 0 20px;
+		width: 700px;
+	}
+</style>
+
 <form method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipart/form-data">
 	<input name="idea[title]" type="text" placeholder="Title">
 	<input name="idea[content]" placeholder="Description"/>
@@ -33,22 +40,9 @@
 		{% endif %}
 	{% endfor %}
 </ul>
-<ul class="unstyled mainlist">
-	{% for image in params.images %}
-		{% if forloop.index0 >= 6 %}
-			{% if forloop.index0 < 9 %}
-				<label for="radio-{{forloop.index0}}">
-					<li class="main-list-item">
-						<img src="{{image}}"/>
-					</li>
-				</label>
-			{% endif %}
-		{% endif %}
-	{% endfor %}
-</ul>
 <ul class="unstyled mainlist last">
 	{% for image in params.images %}
-		{% if forloop.index0 >= 9 %}
+		{% if forloop.index0 >= 6 %}
 			<label for="radio-{{forloop.index0}}">
 				<li class="main-list-item">
 					<img src="{{image}}"/>
