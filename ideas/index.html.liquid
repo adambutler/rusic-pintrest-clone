@@ -82,11 +82,12 @@
 	$('.main-list-item').click(function(){
 		var lightboxImgURL = $(this).find('img').attr('src');
 		var lightboxTitle = $(this).find('h4').html();
+		var lightboxPermalink = $(this).find('a').attr('href');
 		
 		$('#main-list-item-lightbox').find('img').attr('src', lightboxImgURL);
 		$('#main-list-item-lightbox').find('h4').html(lightboxTitle);
 		
-		$.get('http://360k.rusic.com/pintrest-clone/ideas/1896?ajax=comments', function(data) {
+		$.get(lightboxPermalink+'?ajax=comments', function(data) {
 			$('#main-list-item-lightbox').find('div').html(data);
 		});
 		
