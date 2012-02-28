@@ -54,7 +54,7 @@
 		$('#main-list-item-lightbox').find('h4').html(lightboxTitle);
 		
 		$.get('http://360k.rusic.com/pintrest-clone/ideas/1896?ajax=comments', function(data) {
-			$('#main-list-item-lightbox').find('div').html($(data).find('#ajaxContent').html());
+			$('#main-list-item-lightbox').find('div').html('AJAX Content'+$(data).find('#ajaxContent').html());
 		});
 		
 		$('#main-list-item-lightbox').find('div').html(lightboxTitle);
