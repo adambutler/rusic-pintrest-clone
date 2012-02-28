@@ -1,6 +1,18 @@
 {% if params.ajax %}
 	{% if params.ajax == 'comments' %}
-		<h1>Yes</h1>
+		<div id="ajaxContent">
+			{% if idea.comments != empty %}
+				{% for comment in idea.comments %}
+					<li>
+						<img src="{{comment.user.image_url}}" alt="avatar" />
+						<div class="comment-content">{{comment.body | markdown}}</div>
+						<div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a><br /> {{ comment.created_at | human_time_distance }} ago</div>
+					</li>
+				{% endfor %}
+			{% else %}
+				<li>There aren't any comments here yet, why not be the first to say something!</li>
+			{% endif %}
+		</div>
 	{% endif %}
 {% else %}
 	<h1>No</h1>
