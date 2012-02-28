@@ -18,6 +18,6 @@
 	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8">
 		<div class="input"><textarea id="comment_body" name="comment[body]"></textarea></div>
 		<div class="checkarea"><input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" /> share this comment to {{current_user.provider}}?</div>
-		<input type="susbmit" name="submit" value="post comment" class="btn primary" />
+		<input type="submit" name="submit" value="post comment" class="btn primary" />
 	</form>
 {% endif %}
