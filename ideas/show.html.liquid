@@ -25,14 +25,16 @@
 					</form>
 				</li>
 				
+				<!--
 				<li class="comment-list-comment">
 					<form the_link="{{idea.permalink}}/comments" method="post" charset="utf-8">
 						<div class="input"><textarea id="comment_body" name="comment[body]"></textarea></div>
-						<div class="checkarea"><input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" /> share this comment to {{current_user.provider}}?</div>
+						<div class="checkarea"><input class="checkbox" type="checkbox" id="lightbox-ajax-comment-submit" name="comment[should_post_to_social]" value="1" checked="checked" /> share this comment to {{current_user.provider}}?</div>
 						<br/>
-						<div class="btn btn-primary">Submit</div>
+						<div class="btn btn-primary" id="lightbox-ajax-comment-submit">Submit</div>
 					</form>
 				</li>
+				-->
 			</ul>
 		</div>
 	{% endif %}
