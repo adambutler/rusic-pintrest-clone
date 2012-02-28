@@ -5,8 +5,8 @@
 			<ul class="comment-list">
 				{% if idea.comments != empty %}
 					{% for comment in idea.comments %}
-						<li class="comment-list-comment">
-							<img src="{{comment.user.image_url}}" alt="avatar" />
+						<li class="comment-list-comment unstyled">
+							<img src="{{comment.user.image_url}}" alt="avatar" class="avatar"/>
 							<div class="comment-text">
 								<div class="comment-content">{{comment.body | markdown}}</div>
 								<div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a>/div>
@@ -15,7 +15,7 @@
 					{% endfor %}
 				
 				{% else %}
-					<li class="comment-list-comment">There aren't any comments here yet, why not be the first to say something!</li>
+					<li class="comment-list-comment unstyled">There aren't any comments here yet, why not be the first to say something!</li>
 				{% endif %}
 			</ul>
 		</div>
