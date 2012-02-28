@@ -62,7 +62,7 @@
 		$('.main-list-item').each(function(){
 			$(this).removeClass('selected');
 		})
-		console.log($(this).closest('.main-list-item'));
-		$(this).closest('.main-list-item').addClass('selected');
+		console.log($(this).parent());
+		$(this).parent().addClass('selected');
 	})
 </script>
