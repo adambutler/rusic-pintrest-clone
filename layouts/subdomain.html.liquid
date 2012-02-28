@@ -192,17 +192,13 @@
 				{% if current_user %}
 					<div id="header-buttons">
 						{% if current_user.provider == 'twitter' %}
-							<div class="btn twitter">
-			    				<a href="/auth/signout">
-			    					<span class="font-social-logos">M</span> Signout
-			    				</a>
-			    			</div>
+		    				<a href="/auth/signout" class="btn twitter">
+		    					<span class="font-social-logos">M</span> Signout
+		    				</a>
 						{% else %}
-							<div class="btn facebook">
-								<a href="/auth/signout">
-			    					<span class="font-social-logos">C</span> Signout
-			    				</a>
-			    			</div>
+							<a href="/auth/signout" class="btn facebook">
+		    					<span class="font-social-logos">C</span> Signout
+		    				</a>
 		    			{% endif %}
 		    			<a class="btn" id="bookmarklet-link" rel="tooltip" data-original-title="Drag me to your bookmark bar!" href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
 		    				♥ Bookmarklet
