@@ -38,6 +38,8 @@
 			</ul>
 		</div>
 	{% endif %}
+{% elsif comment[body] %}
+	<h1>Thanks!</h1>
 {% else %}
 <!-- No AJAX requests here continue as normal -->
 	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8">
