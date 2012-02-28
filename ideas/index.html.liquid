@@ -5,6 +5,11 @@
 		background-color: #e1e1e1;
 		padding: 5px;
 	}
+	
+	#main-list-item-lightbox img{
+		max-width: 500px;
+		max-height: 500px;
+	}
 </style>
 
 <ul class="unstyled mainlist"></ul>
@@ -14,6 +19,7 @@
 
 <div class="lightbox" id="main-list-item-lightbox">
 	<img src="http://placehold.it/500x500"/>
+	<h4>Title</h4>
 </div>
 
 <script type="text/javascript">
@@ -40,7 +46,10 @@
 	
 	$('.main-list-item').click(function(){
 		var lightboxImgURL = $(this).find('img').attr('src');
+		var lightboxTitle = $(this).find('h4').html();
+		
 		$('#main-list-item-lightbox').find('img').attr('src', lightboxImgURL);
+		$('#main-list-item-lightbox').find('h4').html(lightboxTitle);
 		$('#main-list-item-lightbox').lightbox_me();
 	});
 </script>
