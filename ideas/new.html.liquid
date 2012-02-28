@@ -19,7 +19,7 @@
 	
 </style>
 
-<form method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipart/form-data">
+<form method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipartfbtnform-data">
 	<input name="idea[content]" placeholder="Description" class="hide" value="Nothing to see here!"/>
 	<div class="hide">
 		{% for image in params.images %}
@@ -29,7 +29,7 @@
 	
 	<div id="formbar">
 		<input name="idea[title]" type="text" placeholder="Title" id="input-title">
-		<input type="submit" class="btn btn-primary">
+		<input type="submit" class="btn" disabled="disabled" id="input-submit">
 	</div>
 </form>
 
@@ -70,11 +70,25 @@
 </ul>
 
 <script type="text/javascript">
+	var thumbSelected = false;
+	
 	$('label').click(function(){
 		$('.main-list-item').each(function(){
 			$(this).removeClass('selected');
 		})
-		console.log($(this));
 		$(this).find('.main-list-item').addClass('selected');
+		
+		thumbSelected = true;
+		if($('#input-title').val() != ""){
+			$('#input-submit').addClass('btn-primary').removeAttr('disabled');
+		}
+		
+		$('#input-title').keyup(function(){
+			if(thumbSelected == true && $(this).val() != ""){
+				$('#input-submit').addClass('btn-primary').removeAttr('disabled');
+			}else{
+				$('#input-submit').removeClass('btn-primary').attr('disabled', 'disabled');
+			}
+		})
 	})
 </script>
