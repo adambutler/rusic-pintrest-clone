@@ -204,11 +204,11 @@
 			    				</a>
 			    			</div>
 		    			{% endif %}
-		    			<div class="btn twitter">
-							<a rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title" href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
-		    					♥ Bookmarklet
-		    				</a>
-		    			</div>
+		    			<a rel="popover" id="bookmarklet-btn" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title" href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
+			    			<div class="btn twitter">
+			    				♥ Bookmarklet
+			    			</div>
+			    		</a>
 	    			</div>
 				{% else %}
 					<h2 class="social">
@@ -231,6 +231,9 @@
 					<p>Drag me to your bookmark bar!</p>
 				</a>
 			</div>
-		</footer>		
+		</footer>
+		<script type="text/javascript">
+			$('#bookmarklet-btn').popover(options)
+		</script>		
 	</body>
 </html>
