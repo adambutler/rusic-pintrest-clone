@@ -41,6 +41,7 @@
   
   iframe.setAttribute('id', 'rusic-modal');
   iframe.setAttribute('style', iframeStyle);
+  closebtn.innerHTML = 'x';
   closebtn.setAttribute('style', closebtnStyle);
 
   // Inject the iframe into the host page.
