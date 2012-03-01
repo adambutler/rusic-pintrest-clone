@@ -29,7 +29,7 @@
 	
 	<div id="formbar">
 		<input name="idea[title]" type="text" placeholder="Title" id="input-title">
-		<input type="submit" class="btn" disabled="disabled" id="input-submit">
+		<input type="submit" class="btn" disabled="disabled" id="input-submit" onclick="parent.document.body.removeChild(parent.document.getElementById('rusic-modal')); parent.document.body.removeChild(parent.document.getElementById('rusic-modal-close'));">
 	</div>
 </form>
 
