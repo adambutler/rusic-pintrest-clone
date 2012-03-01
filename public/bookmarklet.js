@@ -44,7 +44,7 @@
 	
 	closebtn.innerHTML = 'x';
 	closebtn.setAttribute('style', closebtnStyle);
-	closebtn.setAttribute('onclick', "alert('foo')");
+	closebtn.setAttribute('onclick', "document.body.removeChild(document.getElementById('rusic-modal'));");
 	
 	// Inject the iframe into the host page.
 	var body = document.getElementsByTagName('body')[0];
