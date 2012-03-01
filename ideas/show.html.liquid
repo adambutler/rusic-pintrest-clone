@@ -40,7 +40,7 @@
 						<br/>
 						<div class="btn btn-primary" id="lightbox-ajax-comment-submit">Submit</div>
 					</form>
-				</li>
+				</li>git s
 				-->
 			</ul>
 		</div>
@@ -50,7 +50,11 @@
 {% else %}
 <!-- No AJAX requests here continue as normal -->
 	<h1>Thanks!</h1><br/><br/>
-	$('html').hide();
+	
+	<script type="text/javascript">
+		$('html').hide();
+	</script>
+
 	<!--
 	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8">
 		<div class="input"><textarea id="comment_body" name="comment[body]"></textarea></div>
