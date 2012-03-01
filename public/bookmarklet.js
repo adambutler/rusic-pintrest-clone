@@ -44,7 +44,7 @@
 	
 	closebtn.innerHTML = 'x';
 	closebtn.setAttribute('style', closebtnStyle);
-	closebtn.setAttribute('onclick', "alert('foo')" style="width:100px; height:100px; background-color:red;");
+	closebtn.setAttribute('onclick', "alert('foo')");
 	
 	// Inject the iframe into the host page.
 	var body = document.getElementsByTagName('body')[0];
