@@ -42,9 +42,10 @@
 	iframe.setAttribute('id', 'rusic-modal');
 	iframe.setAttribute('style', iframeStyle);
 	
+	closebtn.setAttribute('id', 'rusic-modal-close');
 	closebtn.innerHTML = 'x';
 	closebtn.setAttribute('style', closebtnStyle);
-	closebtn.setAttribute('onclick', "document.body.removeChild(document.getElementById('rusic-modal'));");
+	closebtn.setAttribute('onclick', "document.body.removeChild(document.getElementById('rusic-modal')); document.body.removeChild(document.getElementById('rusic-modal-close'));");
 	
 	// Inject the iframe into the host page.
 	var body = document.getElementsByTagName('body')[0];
