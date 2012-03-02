@@ -1,5 +1,5 @@
 {% if env == "development" %}
-	{% assign asset_url="http://127.0.0.1:8080" %}
+	{% assign asset_url="http://127.0.0.1/public" %}
 {% else %}
 	{% assign asset_url="http://adambutler.github.com/rusic-pintrest-clone/public" %}
 {% endif %}
@@ -19,14 +19,9 @@
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/fonts/webfontkit-20120227-063853/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/fonts/webfontkit-20120227-075113/stylesheet.css">
-		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/sharrre_style.css">
 		
 		<!-- Scripts -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="{{asset_url}}/js/jquery.lightbox_me.js"></script>
-		<script type="text/javascript" src="{{asset_url}}/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="{{asset_url}}/js/jquery.sharrre-1.2.0.min.js"></script>
-		<script type="text/javascript" src="{{asset_url}}/js/sharrre_script.js"></script>
 		
 		<!-- Will move css later -->
 		
@@ -49,8 +44,7 @@
 				top: 0;
 				left: 0;
 				width: 100%;
-				margin-bottom: 20px;
-				z-index: 9;
+				height: 80px;
 				border-bottom: 1px solid #ddd;
 				background: #ffffff; /* Old browsers */
 				background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
@@ -67,6 +61,7 @@
 			
 			footer.main {
 				width: 100%;
+				height: 80px;
 				border-bottom: 1px solid #ddd;
 				background: #ffffff; /* Old browsers */
 				background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
@@ -89,7 +84,7 @@
 				position: relative;
 			}
 			
-			header.main h1, h1:hover{
+			h1 {
 				font-family: 'Lobster13Regular', sans-serif;
 				font-size: 80px;
 				text-align: center;
@@ -97,11 +92,7 @@
 				font-weight: normal;
 			}
 			
-			a, a:hover {
-				text-decoration: none;
-			}
-			
-			header.main h2 {
+			h2 {
 				font-family: 'SocialLogosRegular', sans-serif;
 				font-size: 46px;
 				text-align: right;
@@ -112,16 +103,8 @@
 				font-weight: normal;
 			}
 			
-			header.main h2 a{
+			h2 a{
 				color: #333;
-			}
-			
-			header.main h4 {
-				text-align: center;
-				margin-top: 30px;
-				margin-bottom: 10px;
-				color: #999;
-				text-shadow: 1px 1px 0 #fcfcfc;
 			}
 			
 			#header-buttons {
@@ -148,7 +131,7 @@
 			}
 			
 			#main {
-				margin-top: 125px;
+				margin-top: 100px;
 			}
 			
 			/* List */
@@ -165,7 +148,7 @@
 			
 			.mainlist li {
 				width: 200px;
-				padding: 10px 10px 35px 10px;
+				padding: 10px;
 				background-color: #fff;
 				border-radius: 4px;
 				border: 1px solid #dadada;
@@ -174,41 +157,6 @@
 				-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
 				-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 				box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-				cursor: pointer;
-				position: relative;
-				overflow: hidden;
-			}
-			
-			.main-list-item-hud {
-				background: url('{{asset_url}}/img/groovepaper.png');
-				width: 100%;
-				padding: 0 10px;
-				height: 30px;
-				line-height: 30px;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				border-top: 1px solid #ddd;
-				font-size: 14px;
-				color: #333;
-				text-rendering: optimizeelegibility;
-				font-weight: bold;
-				
-			}			
-			
-			.main-list-item-hud img{
-				position: relative;
-				top: 1px;
-				opacity: 0.5;
-			}
-			
-			.main-list-item-hud img.liked{
-				opacity: 0.8;
-			}
-			
-			
-			.main-list-item-hud img:hover {
-				opacity: 1;
 			}
 			
 			.mainlist li:hover, .mainlist li.selected {
@@ -223,10 +171,6 @@
 				color: #0099d5;
 			}
 			
-			.heart:hover {
-				color: #b33732;
-			}
-			
 			.font-social-logos {
 				font-family: 'SocialLogosRegular', sans-serif;
 			}
@@ -234,38 +178,25 @@
 		</style>
 	</head>	
 	<body>
-		
-		<!-- Social Scripts -->
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		
-		<!-- Header -->
 		<header class="main">
 			<div class="container">
-				<a href="{{space.permalink}}">
-					<h1 class="red title">{{space.title}}</h1>
-				</a>
+				<h1 class="red title">{{space.title}}</h1>
+				
 				{% if current_user %}
 					<div id="header-buttons">
 						{% if current_user.provider == 'twitter' %}
-		    				<a href="/auth/signout" class="btn twitter">
-		    					<span class="font-social-logos">M</span> Signout
-		    				</a>
+							<div class="btn twitter">
+			    				<a href="/auth/signout">
+			    					<span class="font-social-logos">M</span> Signout
+			    				</a>
+			    			</div>
 						{% else %}
-							<a href="/auth/signout" class="btn facebook">
-		    					<span class="font-social-logos">C</span> Signout
-		    				</a>
+							<div class="btn facebook">
+								<a href="/auth/signout">
+			    					<span class="font-social-logos">C</span> Signout
+			    				</a>
+			    			</div>
 		    			{% endif %}
-		    			<a class="btn heart" id="bookmarklet-link" rel="tooltip" data-original-title="Drag me to your bookmark bar!" href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
-		    				♥ Bookmarklet
-			    		</a>
 	    			</div>
 				{% else %}
 					<h2 class="social">
@@ -277,7 +208,6 @@
 						</a>
 					</h2>
 				{% endif %}
-				<h4>{{space.summary}}</h4>
 			</div>
 		</header>
 		<div class="container" id="main">
@@ -285,24 +215,10 @@
 		</div>
 		<footer class="main">
 			<div class="container">
-				<!--
-				<br/>
-				<div class="fb-like" data-href="{{space.permalink}}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="true"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{space.permalink}}" data-via="adambu1988">Tweet</a>
-				-->
-				<div class="sharrre-container">
-					<div id="twitter" data-url="{{space.permalink}}" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
-					<div id="facebook" data-url="{{space.permalink}}" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
-					<div id="googleplus" data-url="{{space.permalink}}" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
-				</div>
+				<a href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
+					<p>Drag me to your bookmark bar!</p>
+				</a>
 			</div>
-		</footer>
-		<script type="text/javascript">
-			$('#bookmarklet-link').tooltip({placement:'bottom'}).click(function(e){
-				e.preventDefault();		
-			}).mouseover(function(e){
-				e.preventDefault();		
-			});
-		</script>		
+		</footer>		
 	</body>
 </html>

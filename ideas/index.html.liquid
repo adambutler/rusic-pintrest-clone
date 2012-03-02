@@ -1,3 +1,9 @@
+{% if env == "development" %}
+	{% assign asset_url="http://127.0.0.1:8080" %}
+{% else %}
+	{% assign asset_url="http://adambutler.github.com/rusic-pintrest-clone/public" %}
+{% endif %}
+
 <style type="text/css">
 	.lightbox {
 		display: none;
@@ -10,6 +16,9 @@
 		max-width: 800px;
 		max-height: 800px;
 	}
+	
+	
+	
 </style>
 
 <style type="text/css">
@@ -63,14 +72,43 @@
 	
 	{% for idea in space.ideas %}
 		ideas[{{forloop.index0}}] = new Object;
-		ideas[{{forloop.index0}}].title = '{{idea.title | replace: "'","&#39;"}}';
+		ideas[{{forloop.index0}}].title = '{{idea.title | replace: "'","&#39;"}}'; // '" <-- Coda syntax highlight fix, ignore!
 		ideas[{{forloop.index0}}].custom1 = '{{idea.custom1}}';
 		ideas[{{forloop.index0}}].permalink = '{{idea.permalink}}';
+		ideas[{{forloop.index0}}].likes = '{{idea.likes}}';
+		ideas[{{forloop.index0}}].like_link = '{{idea.like_link}}';
+		ideas[{{forloop.index0}}].comments = '{{idea.comments_count}}';
+		ideas[{{forloop.index0}}].idea_liked = {% if idea.liked? %}true{% else %}false{% endif %};
 	{% endfor %}
 	
 	
 	for(var i = 0; i<ideas.length; i++){
-		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><a href="'+ideas[i].permalink+'"><h4>'+ideas[i].title+'</h4></a></li>');
+	
+		var theLikeBit = "";
+		
+		if(ideas[i].idea_liked){
+			theLikeBit = '<img class="likebtn liked" like_link="'+ideas[i].like_link+'" src="{{asset_url}}/img/icon-heart-red.png"/> ';
+		}else{
+			theLikeBit = '<img class="likebtn" like_link="'+ideas[i].like_link+'" src="{{asset_url}}/img/icon-heart.png"/> ';
+		}
+	
+		$('.mainlist').eq(col).append( 	'<li class="main-list-item">'+
+											'<img class="main-list-item-main-image" src="'+ideas[i].custom1+'" alt="{{idea.title}}"/>'+
+											'<a href="'+ideas[i].permalink+'">'+
+												'<h4>'+ideas[i].title+'</h4>'+
+											'</a>'+
+											'<div class="main-list-item-hud">'+
+												'<span class="comments">'+
+													'<img src="{{asset_url}}/img/icon-bubble.png"/> '+ideas[i].comments+
+												'</span>&nbsp;&nbsp;'+
+												'<span class="likes">'+
+													theLikeBit+
+													'<span class="like-val">'+
+														ideas[i].likes+
+													'</span>'+
+												'</span>'+
+											'</div>'+
+										'</li>');
 		
 		if(col<4){
 			col++;
@@ -79,10 +117,10 @@
 		}
 	}
 	
-	$('.main-list-item').click(function(){
-		var lightboxImgURL = $(this).find('img').attr('src');
-		var lightboxTitle = $(this).find('h4').html();
-		var lightboxPermalink = $(this).find('a').attr('href');
+	$('.main-list-item .main-list-item-main-image, .main-list-item .comments').click(function(){
+		var lightboxImgURL = $(this).closest('.main-list-item').find('img').attr('src');
+		var lightboxTitle = $(this).closest('.main-list-item').find('h4').html();
+		var lightboxPermalink = $(this).closest('.main-list-item').find('a').attr('href');
 		
 		$('#main-list-item-lightbox').find('img').attr('src', lightboxImgURL);
 		$('#main-list-item-lightbox').find('h4').html(lightboxTitle);
@@ -94,6 +132,23 @@
 		$('#main-list-item-lightbox').find('div').html(lightboxTitle);
 		$('#main-list-item-lightbox').lightbox_me();
 	});
+	
+	$('.likebtn').click(function(e){
+		
+		e.preventDefault();
+		
+		var button = this;
+		
+		$.post($(this).attr('like_link'), function(data) {
+			if(data.valid){
+				$(button).attr('src', '{{asset_url}}/img/icon-heart-red.png').addClass('liked');
+				$(button).next('.like-val').html(data.likes_count);
+			}else{
+				alert(data.message);
+			}
+		}, 'json');
+	});
+	
 </script>
 
 

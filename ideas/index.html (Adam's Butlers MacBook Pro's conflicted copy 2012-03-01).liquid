@@ -1,0 +1,36 @@
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist"></ul>
+<ul class="unstyled mainlist last"></ul>
+
+
+<script type="text/javascript">
+	
+	var ideas = new Array();
+	var col = 0;
+	
+	{% for idea in space.ideas %}
+		ideas[{{forloop.index0}}] = new Object;
+		ideas[{{forloop.index0}}].title = '{{idea.title | replace: "'","&#39;"}}';
+		ideas[{{forloop.index0}}].custom1 = '{{idea.custom1}}';
+	{% endfor %}
+	
+	
+	for(var i = 0; i<ideas.length; i++){
+		$('.mainlist').eq(col).append('<li class="main-list-item"><img src="'+ideas[i].custom1+'" alt="{{idea.title}}"/><h4>'+ideas[i].title+'</h4></li>');
+		
+		if(col<4){
+			col++;
+		}else{
+			col=0;
+		}
+	}
+</script>
+<!--
+
+<li class="main-list-item">
+	<img src="{{idea.custom1}}" alt="{{idea.title}}"/>
+	<h4>{{idea.title}}</h4>
+</li>
+
+-->
