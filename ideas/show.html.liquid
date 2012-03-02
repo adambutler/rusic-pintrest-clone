@@ -3,6 +3,15 @@
 		padding: 0 20px;
 		width: 700px;
 	}
+	
+	.show-image {
+		padding: 10px;
+		background-color: #fff;
+		border-radius: 4px;
+		border: 1px solid #dadada;
+		max-height: 300px;
+		max-width: 700px;
+	}
 </style>
 
 <!-- Handle AJAX requests here -->
@@ -40,7 +49,7 @@
 						<br/>
 						<div class="btn btn-primary" id="lightbox-ajax-comment-submit">Submit</div>
 					</form>
-				</li>git s
+				</li>
 				-->
 			</ul>
 		</div>
@@ -49,11 +58,8 @@
 	
 {% else %}
 <!-- No AJAX requests here continue as normal -->
-	<h1>Thanks!</h1><br/><br/>
-	
-	<script type="text/javascript">
-		$('html').hide();
-	</script>
+	<h1>Thanks!</h1><br/>
+	<img class="show-image" src="{{idea.custom1}}">
 
 	<!--
 	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8">
