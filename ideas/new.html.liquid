@@ -1,24 +1,12 @@
-<style type="text/css">
-	.container {
-		padding: 0 20px;
-		width: 700px;
-	}
-	
-	#formbar {
-		width: 300px;
-		border-radius: 4px;
-		background-color: #e1e1e1;
-		padding: 5px;
-		text-align: center;
-		margin-left: 190px;
-	}
-	
-	#formbar #input-title {
-		margin-top: 6px;
-	}
-	
-</style>
+{% if env == "development" %}
+	{% assign asset_url="http://127.0.0.1:8080" %}
+{% else %}
+	{% assign asset_url="http://adambutler.github.com/rusic-pintrest-clone/public" %}
+{% endif %}
 
+<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/new.css">
+
+<!-- Main Form -->
 <form method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipartfbtnform-data">
 	<input name="idea[content]" placeholder="Description" class="hide" value="Nothing to see here!"/>
 	<div class="hide">
@@ -33,6 +21,7 @@
 	</div>
 </form>
 
+<!-- Thumbnail columns -->
 <ul class="unstyled mainlist">
 	{% for image in params.images %}
 		{% if forloop.index0 < 3 %}
@@ -69,14 +58,15 @@
 	{% endfor %}
 </ul>
 
+<!-- Scripts -->
 <script type="text/javascript">
 	var thumbSelected = false;
 	
 	$('label').click(function(){
 		$('.main-list-item').each(function(){
-			$(this).removeClass('selected');
+			$(this).removeClass('selected').css('border-width', '1px');
 		})
-		$(this).find('.main-list-item').addClass('selected');
+		$(this).find('.main-list-item').addClass('selected').css('border-width', '3px');
 		
 		thumbSelected = true;
 		if($('#input-title').val() != ""){

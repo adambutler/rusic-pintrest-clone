@@ -1,0 +1,198 @@
+.pointer {
+	cursor: pointer;
+}
+
+.hide {
+	display: none;
+}
+
+body {
+	background: url('http://subtlepatterns.com/patterns/groovepaper.png')
+}
+
+header.main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin-bottom: 20px;
+	z-index: 9;
+	border-bottom: 1px solid #ddd;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+footer.main {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+footer.main p {
+	line-height: 80px;
+}
+
+header.main .container{
+	position: relative;
+}
+
+header.main h1, h1:hover{
+	font-family: 'Lobster13Regular', sans-serif;
+	font-size: 80px;
+	text-align: center;
+	margin-top: 20px;
+	font-weight: normal;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+header.main h2 {
+	font-family: 'SocialLogosRegular', sans-serif;
+	font-size: 46px;
+	text-align: right;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	margin-top: 20px;
+	font-weight: normal;
+}
+
+header.main h2 a{
+	color: #333;
+}
+
+header.main h4 {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	color: #999;
+	text-shadow: 1px 1px 0 #fcfcfc;
+}
+
+#header-buttons {
+	position: absolute;
+	top: 5px;
+	right: 0;
+	margin-top: 20px;
+}
+
+.red {
+	color: #b33732;
+	text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+	                 0 0 5px rgba(0,0,0,.1),
+	                 0 1px 3px rgba(0,0,0,.3),
+	                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+#main {
+	margin-top: 125px;
+}
+
+/* List */
+
+.mainlist {
+	width: 220px;
+	margin-right: 20px;
+	float: left;
+}
+
+.mainlist.last {
+	margin-right: 0;
+}
+
+.mainlist li {
+	width: 200px;
+	padding: 10px 10px 35px 10px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #dadada;
+	float: left;
+	margin: 10px 0;
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-list-item-hud {
+	background: url('{{asset_url}}/img/groovepaper.png');
+	width: 100%;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #ddd;
+	font-size: 14px;
+	color: #333;
+	text-rendering: optimizeelegibility;
+	font-weight: bold;
+	
+}			
+
+.main-list-item-hud img{
+	position: relative;
+	top: 1px;
+	opacity: 0.5;
+}
+
+.main-list-item-hud img.liked{
+	opacity: 0.8;
+}
+
+
+.main-list-item-hud img:hover {
+	opacity: 1;
+}
+
+.mainlist li:hover, .mainlist li.selected {
+	border-color: #b33732;
+}
+
+.facebook:hover {
+	color: #3b5998;
+}
+
+.twitter:hover {
+	color: #0099d5;
+}
+
+.heart:hover {
+	color: #b33732;
+}
+
+.font-social-logos {
+	font-family: 'SocialLogosRegular', sans-serif;
+}

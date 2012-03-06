@@ -1,0 +1,17 @@
+.container {
+	padding: 0 20px;
+	width: 700px;
+}
+
+#formbar {
+	width: 300px;
+	border-radius: 4px;
+	background-color: #e1e1e1;
+	padding: 5px;
+	text-align: center;
+	margin-left: 190px;
+}
+
+#formbar #input-title {
+	margin-top: 6px;
+}

@@ -4,66 +4,7 @@
 	{% assign asset_url="http://adambutler.github.com/rusic-pintrest-clone/public" %}
 {% endif %}
 
-<style type="text/css">
-	.lightbox {
-		display: none;
-		border-radius: 4px;
-		background-color: #f1f1f1;
-		padding: 5px;
-		border: 1px solid #d8d8d8;
-	}
-	
-	#main-list-item-lightbox img{
-		max-width: 800px;
-		max-height: 800px;
-		border: 1px solid #d8d8d8;
-	}
-	
-	
-	
-</style>
-
-<style type="text/css">
-	.comment-list li {
-		background-color: #eee;
-		border-radius: 4px;
-		padding: 5px;
-		margin: 20px 30px;
-		border: 1px solid #d8d8d8;
-		overflow: hidden;
-		box-shadow: 0 1px 0 #ccc,
-           0 2px 0 #c9c9c9,
-           0 3px 0 #bbb,
-           0 4px 0 #b9b9b9,
-           0 5px 0 #aaa,
-           0 6px 1px rgba(0,0,0,.1),
-           0 0 5px rgba(0,0,0,.1),
-           0 1px 3px rgba(0,0,0,.3),
-           0 3px 5px rgba(0,0,0,.2),
-           0 5px 10px rgba(0,0,0,.25);
-	}
-	
-	.comment-list li form {
-		margin-bottom: 0;
-	}
-	
-	.comment-list li form {
-		margin-bottom: 0;
-		text-align: center;
-	}
-	
-	.comment-list li form textarea {
-		width: 98%;
-	}
-	
-	.comment-list .comment-text, .comment-list .avatar {
-		float: left;
-	}
-	
-	.comment-list .avatar {
-		margin-right: 10px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/index.css">
 
 <ul class="unstyled mainlist"></ul>
 <ul class="unstyled mainlist"></ul>
@@ -71,16 +12,20 @@
 <ul class="unstyled mainlist last"></ul>
 
 <div class="lightbox" id="main-list-item-lightbox">
-	<img src="http://placehold.it/500x500"/>
-	<h4>Title</h4>
+	<img src=""/>
+	<h4></h4>
 	<div></div>
 </div>
 
 <script type="text/javascript">
 	
-	var ideas = new Array();
+	// Current Column Define
 	var col = 0;
 	
+	// Setup an array to hold the data
+	var ideas = new Array();
+	
+	// Loop ideas save to object in array
 	{% for idea in space.ideas %}
 		ideas[{{forloop.index0}}] = new Object;
 		ideas[{{forloop.index0}}].title = '{{idea.title | replace: "'","&#39;"}}'; // '" <-- Coda syntax highlight fix, ignore!
@@ -92,6 +37,7 @@
 		ideas[{{forloop.index0}}].idea_liked = {% if idea.liked? %}true{% else %}false{% endif %};
 	{% endfor %}
 	
+	// Distribute ideas to each column
 	
 	for(var i = 0; i<ideas.length; i++){
 	
@@ -128,6 +74,7 @@
 		}
 	}
 	
+	// Launch Lightbox on comment click / image click
 	$('.main-list-item .main-list-item-main-image, .main-list-item .comments').click(function(){
 		var lightboxImgURL = $(this).closest('.main-list-item').find('img').attr('src');
 		var lightboxTitle = $(this).closest('.main-list-item').find('h4').html();
@@ -144,6 +91,7 @@
 		$('#main-list-item-lightbox').lightbox_me();
 	});
 	
+	// Like Button AJAX
 	$('.likebtn').click(function(e){
 		
 		e.preventDefault();

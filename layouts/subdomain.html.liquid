@@ -15,11 +15,11 @@
 			{% endif %}
 		</title>
 			
-		<!-- <link rel="stylesheet" type="text/css" href="{{ asset_url }}/styles/css/style.css"> -->
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/fonts/webfontkit-20120227-063853/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/fonts/webfontkit-20120227-075113/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/sharrre_style.css">
+		<link rel="stylesheet" type="text/css" href="{{asset_url}}/styles/subdomain.css">
 		
 		<!-- Scripts -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -27,211 +27,6 @@
 		<script type="text/javascript" src="{{asset_url}}/bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{{asset_url}}/js/jquery.sharrre-1.2.0.min.js"></script>
 		<script type="text/javascript" src="{{asset_url}}/js/sharrre_script.js"></script>
-		
-		<!-- Will move css later -->
-		
-		<style type="text/css">
-		
-			.pointer {
-				cursor: pointer;
-			}
-			
-			.hide {
-				display: none;
-			}
-			
-			body {
-				background: url('http://subtlepatterns.com/patterns/groovepaper.png')
-			}
-			
-			header.main {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				margin-bottom: 20px;
-				z-index: 9;
-				border-bottom: 1px solid #ddd;
-				background: #ffffff; /* Old browsers */
-				background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-				background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-				-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
-				-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-				box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-			}
-			
-			footer.main {
-				width: 100%;
-				border-bottom: 1px solid #ddd;
-				background: #ffffff; /* Old browsers */
-				background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-				background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-				-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
-				-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-				box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-			}
-			
-			footer.main p {
-				line-height: 80px;
-			}
-			
-			header.main .container{
-				position: relative;
-			}
-			
-			header.main h1, h1:hover{
-				font-family: 'Lobster13Regular', sans-serif;
-				font-size: 80px;
-				text-align: center;
-				margin-top: 20px;
-				font-weight: normal;
-			}
-			
-			a, a:hover {
-				text-decoration: none;
-			}
-			
-			header.main h2 {
-				font-family: 'SocialLogosRegular', sans-serif;
-				font-size: 46px;
-				text-align: right;
-				position: absolute;
-				top: 5px;
-				right: 0;
-				margin-top: 20px;
-				font-weight: normal;
-			}
-			
-			header.main h2 a{
-				color: #333;
-			}
-			
-			header.main h4 {
-				text-align: center;
-				margin-top: 30px;
-				margin-bottom: 10px;
-				color: #999;
-				text-shadow: 1px 1px 0 #fcfcfc;
-			}
-			
-			#header-buttons {
-				position: absolute;
-				top: 5px;
-				right: 0;
-				margin-top: 20px;
-			}
-			
-			.red {
-				color: #b33732;
-				text-shadow: 0 1px 0 #ccc,
-			                 0 2px 0 #c9c9c9,
-			                 0 3px 0 #bbb,
-			                 0 4px 0 #b9b9b9,
-			                 0 5px 0 #aaa,
-			                 0 6px 1px rgba(0,0,0,.1),
-  			                 0 0 5px rgba(0,0,0,.1),
-  			                 0 1px 3px rgba(0,0,0,.3),
-  			                 0 3px 5px rgba(0,0,0,.2),
-			                 0 5px 10px rgba(0,0,0,.25),
-			                 0 10px 10px rgba(0,0,0,.2),
-			                 0 20px 20px rgba(0,0,0,.15);
-			}
-			
-			#main {
-				margin-top: 125px;
-			}
-			
-			/* List */
-			
-			.mainlist {
-				width: 220px;
-				margin-right: 20px;
-				float: left;
-			}
-			
-			.mainlist.last {
-				margin-right: 0;
-			}
-			
-			.mainlist li {
-				width: 200px;
-				padding: 10px 10px 35px 10px;
-				background-color: #fff;
-				border-radius: 4px;
-				border: 1px solid #dadada;
-				float: left;
-				margin: 10px 0;
-				-moz-box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
-				-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-				box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-				cursor: pointer;
-				position: relative;
-				overflow: hidden;
-			}
-			
-			.main-list-item-hud {
-				background: url('{{asset_url}}/img/groovepaper.png');
-				width: 100%;
-				padding: 0 10px;
-				height: 30px;
-				line-height: 30px;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				border-top: 1px solid #ddd;
-				font-size: 14px;
-				color: #333;
-				text-rendering: optimizeelegibility;
-				font-weight: bold;
-				
-			}			
-			
-			.main-list-item-hud img{
-				position: relative;
-				top: 1px;
-				opacity: 0.5;
-			}
-			
-			.main-list-item-hud img.liked{
-				opacity: 0.8;
-			}
-			
-			
-			.main-list-item-hud img:hover {
-				opacity: 1;
-			}
-			
-			.mainlist li:hover, .mainlist li.selected {
-				border-color: #b33732;
-			}
-			
-			.facebook:hover {
-				color: #3b5998;
-			}
-			
-			.twitter:hover {
-				color: #0099d5;
-			}
-			
-			.heart:hover {
-				color: #b33732;
-			}
-			
-			.font-social-logos {
-				font-family: 'SocialLogosRegular', sans-serif;
-			}
-			
-		</style>
 	</head>	
 	<body>
 		
@@ -263,7 +58,7 @@
 		    					<span class="font-social-logos">C</span> Signout
 		    				</a>
 		    			{% endif %}
-		    			<a class="btn heart" id="bookmarklet-link" rel="tooltip" data-original-title="Drag me to your bookmark bar!" href="javascript:%20(function()%20%7B%20%20var%20s%20=%20document.createElement('script');%20%20s.setAttribute('src','http://adambutler.github.com/rusic-pintrest-clone/public/bookmarklet.js');%20%20document.body.appendChild(s);%7D)();">
+		    			<a class="btn heart" id="bookmarklet-link" rel="tooltip" data-original-title="Drag me to your bookmark bar!" href="javascript:((function()%7Bvar%20a=%22{{ space | link }}/ideas/new%22,b='position:%20fixed;%20z-index:%20999999;%20width:%20760px;%20height:%20590px;%20right:%2020px;%20top:%2020px;%20border:%205px%20solid%20#b33732;%20background-color:%20white;%20scrolling:%20%22no%22;%20-moz-box-shadow:%200px%200px%2020px%20#000000;%20-webkit-box-shadow:%200px%200px%2020px%20#000000;%20box-shadow:%200px%200px%2020px%20#000000;',c=%22cursor:pointer;%20position:%20fixed;right:%20773px;top:%208px;z-index:%20999999;border-radius:40px;width:26px;height:26px;background-color:%20#f5f5f5;background-image:%20-moz-linear-gradient(top,%20#ffffff,%20#e6e6e6);background-image:%20-ms-linear-gradient(top,%20#ffffff,%20#e6e6e6);background-image:%20-webkit-gradient(linear,%200%200,%200%20100%25,%20from(#ffffff),%20to(#e6e6e6));background-image:%20-webkit-linear-gradient(top,%20#ffffff,%20#e6e6e6);background-image:%20-o-linear-gradient(top,%20#ffffff,%20#e6e6e6);background-image:%20linear-gradient(top,%20#ffffff,%20#e6e6e6);background-repeat:%20repeat-x;filter:%20progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',%20endColorstr='#e6e6e6',%20GradientType=0);border-color:%20#e6e6e6%20#e6e6e6%20#bfbfbf;border-color:%20rgba(0,%200,%200,%200.1)%20rgba(0,%200,%200,%200.1)%20rgba(0,%200,%200,%200.25);filter:%20progid:DXImageTransform.Microsoft.gradient(enabled%20=%20false);border:%201px%20solid%20#ccc;border-bottom-color:%20#bbb;-webkit-box-shadow:%20inset%200%201px%200%20rgba(255,%20255,%20255,%200.2),%200%201px%202px%20rgba(0,%200,%200,%200.05);-moz-box-shadow:%20inset%200%201px%200%20rgba(255,%20255,%20255,%200.2),%200%201px%202px%20rgba(0,%200,%200,%200.05);box-shadow:%20inset%200%201px%200%20rgba(255,%20255,%20255,%200.2),%200%201px%202px%20rgba(0,%200,%200,%200.05);filter:%20progid:DXImageTransform.Microsoft.gradient(enabled%20=%20false);line-height:26px;font-size:12px;text-align:center;font-family:%20Arial,%20sans-serif;font-weight:%20bold;color:%20#ccc;text-shadow:%201px%201px%200px%20#FFF;%22,d=%5B%5D.slice.call(document.querySelectorAll(%22img%22));d=d.sort(function(a,b)%7Breturn%20a.height*a.width%3Cb.height*b.width?1:a.height*a.width%3Eb.height*b.width?-1:0%7D);var%20e=d.map(function(a)%7Breturn%20encodeURIComponent(a.src)%7D),f=document.createElement(%22iframe%22),g=document.createElement(%22div%22);f.setAttribute(%22src%22,a+%22?images%5B%5D=%22+e.slice(0,9).join(%22&images%5B%5D=%22)),f.setAttribute(%22id%22,%22rusic-modal%22),f.setAttribute(%22style%22,b),g.setAttribute(%22id%22,%22rusic-modal-close%22),g.innerHTML=%22x%22,g.setAttribute(%22style%22,c),g.setAttribute(%22onclick%22,%22document.body.removeChild(document.getElementById('rusic-modal'));%20document.body.removeChild(document.getElementById('rusic-modal-close'));%22);var%20h=document.getElementsByTagName(%22body%22)%5B0%5D;h.appendChild(f),h.appendChild(g)%7D)).call(this);">
 		    				♥ Bookmarklet
 			    		</a>
 	    			</div>
@@ -285,11 +80,6 @@
 		</div>
 		<footer class="main">
 			<div class="container">
-				<!--
-				<br/>
-				<div class="fb-like" data-href="{{space.permalink}}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="true"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{space.permalink}}" data-via="adambu1988">Tweet</a>
-				-->
 				<div class="sharrre-container">
 					<div id="twitter" data-url="{{space.permalink}}" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
 					<div id="facebook" data-url="{{space.permalink}}" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
